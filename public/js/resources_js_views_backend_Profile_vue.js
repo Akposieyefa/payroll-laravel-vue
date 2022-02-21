@@ -184,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_css_profile_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -207,7 +207,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body{\n    background: #DAE3E7;\n    font-family: \"Roboto\", sans-serif\n}\nimg{\n    max-width:100%\n}\n.row{\n    margin-top: 40px;\n}\n.card {\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\n}\n.header {\n    padding: 10px 0;\n    background: #f5f5f5;\n    border-top: 3px solid #3AAA64;\n}\n.button-email{\n    margin:10px 0\n}\nh5, .fa-circle{\n    color:#3AAA64\n}\n.list-group {\n    list-style: disc inside;\n}\n.list-group-item {\n    display: list-item;\n}\n.find-more{\n    text-align: right;\n}\n.label-theme{\n    background: #3AAA64;\n    font-size: 14px;\n    padding: .3em .7em .3em;\n    color: #fff;\n    border-radius: .25em;\n}\n.label a{\n    color: inherit;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{\r\n    background: #DAE3E7;\r\n    font-family: \"Roboto\", sans-serif\r\n}\r\nimg{\r\n    max-width:100%\r\n}\r\n.row{\r\n    margin-top: 40px;\r\n}\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\r\n}\r\n.header {\r\n    padding: 10px 0;\r\n    background: #f5f5f5;\r\n    border-top: 3px solid #3AAA64;\r\n}\r\n.button-email{\r\n    margin:10px 0\r\n}\r\nh5, .fa-circle{\r\n    color:#3AAA64\r\n}\r\n.list-group {\r\n    list-style: disc inside;\r\n}\r\n.list-group-item {\r\n    display: list-item;\r\n}\r\n.find-more{\r\n    text-align: right;\r\n}\r\n.label-theme{\r\n    background: #3AAA64;\r\n    font-size: 14px;\r\n    padding: .3em .7em .3em;\r\n    color: #fff;\r\n    border-radius: .25em;\r\n}\r\n.label a{\r\n    color: inherit;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
