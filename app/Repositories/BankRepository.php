@@ -44,7 +44,7 @@ class BankRepository implements BankRepositoryInterface
                 'message' => $validator->messages()->first(),
                 'success' => false
             ], 422);
-        }else {
+        } else {
             return $this->action->createBnkAction($request);
         }
     }
@@ -86,7 +86,7 @@ class BankRepository implements BankRepositoryInterface
                 'message' => $validator->messages()->first(),
                 'success' => false
             ], 422);
-        }else {
+        } else {
             return $this->action->updateBnkAction($request, $id);
         }
     }
@@ -100,5 +100,4 @@ class BankRepository implements BankRepositoryInterface
     {
         return $this->action->deleteBnkAction($id);
     }
-
 }

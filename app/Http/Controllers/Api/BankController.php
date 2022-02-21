@@ -8,7 +8,7 @@ use App\Repositories\Contracts\BankRepositoryInterface;
 
 class BankController extends Controller
 {
-    private  BankRepositoryInterface $bankRepositoryInterface;
+    private BankRepositoryInterface $bankRepositoryInterface;
 
     public function __construct(BankRepositoryInterface $bankRepositoryInterface)
     {
