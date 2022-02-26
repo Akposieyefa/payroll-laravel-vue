@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Actions;
 
 use App\Models\Bank;
-use App\Http\Resources\BankResource;
 use Illuminate\Http\JsonResponse;
+use App\Http\Resources\BankResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 /**
@@ -15,7 +14,7 @@ class BankAction
     /**
      * @var Bank
      */
-    private Bank $model;
+    Bankprivate $model;
 
     /**
      * @param Bank $model
@@ -27,7 +26,7 @@ class BankAction
 
     /**
      * create bank
-     * @param $req
+     * @param  $req
      * @return JsonResponse
      */
     public function createBnkAction($req): JsonResponse
@@ -35,19 +34,51 @@ class BankAction
         try {
             $bnk = $this->model->create([
                 'bank_name' => $req->name,
-                'bank_code' => $req->code
+                'bank_code' => $req->code,
             ]);
             return response()->json([
                 'message' => 'Bank created successfully',
-                'data' => new BankResource($bnk),
-                'success' => true
+                'data'    => new BankResource($bnk),
+                'success' => true,
             ], 200);
-        } catch (\Exception $e) {
+        } catch (\Exception$e) {
             return response()->json([
                 'message' => 'Sorry unable to  created bank',
-                'error' => $e->getMessage(),
-                'success' => false
+                'error'   => $e->getMessage(),
+                'success' => false,
             ], 400);
+        }
+    }
+
+    /**
+     * delete bank
+     * @param  $id
+     * @return JsonResponse
+     */
+    public function deleteBnkAction($id): JsonResponse
+    {
+        $data = $this->model->where('id', '=', $id)->exists();
+
+        if ($data) {
+            $bnk = $this->model->find($id);
+            try {
+                $bnk->delete();
+                return response()->json([
+                    'message' => 'Bank deleted successfully',
+                    'data'    => new BankResource($bnk),
+                    'success' => true,
+                ], 200);
+            } catch (\Exception$e) {
+                return response()->json([
+                    'message' => 'Sorry unable to delete bank record',
+                    'success' => false,
+                ], 400);
+            }
+        } else {
+            return response()->json([
+                'message' => 'Sorry this data do not exist',
+                'success' => false,
+            ], 404);
         }
     }
 
@@ -55,108 +86,80 @@ class BankAction
      * get all banks
      * @return JsonResponse|AnonymousResourceCollection
      */
-    public function  getAllBnkAction(): JsonResponse|AnonymousResourceCollection
+    public function getAllBnkAction(): JsonResponse | AnonymousResourceCollection
     {
         $banks = $this->model->with(['staffs'])->latest()->paginate(20);
+
         if (count($banks) < 1) {
             return response()->json([
                 'message' => 'Sorry no bank found',
-                'success' => false
+                'success' => false,
             ], 404);
-        }else {
+        } else {
             return BankResource::collection($banks)->additional([
-                'message' => "All bank list",
-                'success' => true
+                'message' => 'All bank list',
+                'success' => true,
             ], 200);
         }
     }
 
     /**
      * get single bank
-     * @param $id
+     * @param  $id
      * @return BankResource|JsonResponse
      */
-    public function getBnkAction($id): JsonResponse|BankResource
+    public function getBnkAction($id): JsonResponse | BankResource
     {
         $data = $this->model->with(['staffs'])->where('id', '=', $id)->exists();
+
         if ($data) {
             $bnk = $this->model->find($id);
-            return (new BankResource($bnk))->additional( [
-                'message' => "Bank details",
-                'success' => true
+            return (new BankResource($bnk))->additional([
+                'message' => 'Bank details',
+                'success' => true,
             ], 200);
-        }else {
+        } else {
             return response()->json([
                 'message' => 'Sorry this data do not exist',
-                'success' => false
+                'success' => false,
             ], 404);
         }
     }
 
     /**
      * update bank
-     * @param $req
-     * @param $id
+     * @param  $req
+     * @param  $id
      * @return JsonResponse
      */
     public function updateBnkAction($req, $id): JsonResponse
     {
         $data = $this->model->where('id', '=', $id)->exists();
+
         if ($data) {
-            $bnk = $this->model->find($id);
+            $bnk       = $this->model->find($id);
             $bnk->slug = null;
             try {
                 $update = $bnk->update([
                     'bank_name' => empty($req->name) ? $bnk->bank_name : $req->name,
-                    'bank_code' =>   empty($req->code) ? $bnk->bank_code : $req->code
+                    'bank_code' => empty($req->code) ? $bnk->bank_code : $req->code,
                 ]);
                 return response()->json([
                     'message' => 'Bank updated successfully',
-                    'data' => new BankResource($bnk),
-                    'success' => true
+                    'data'    => new BankResource($bnk),
+                    'success' => true,
                 ], 200);
-            } catch (\Exception $e) {
+            } catch (\Exception$e) {
                 return response()->json([
                     'message' => 'Sorry unable to  updated bank details',
-                    'error' => $e->getMessage(),
-                    'success' => false
+                    'error'   => $e->getMessage(),
+                    'success' => false,
                 ], 400);
             }
-        }else {
+        } else {
             return response()->json([
                 'message' => 'Sorry this data do not exist',
-                'success' => false
-            ], 404);
-        }
-    }
-
-    /**
-     * delete bank
-     * @param $id
-     * @return JsonResponse
-     */
-    public function deleteBnkAction($id): JsonResponse
-    {
-        $data = $this->model->where('id', '=', $id)->exists();
-        if ($data) {
-            $bnk =  $this->model->find($id);
-            try {
-                $bnk->delete();
-                return response()->json([
-                    'message' => 'Bank deleted successfully',
-                    'data' => new BankResource($bnk),
-                    'success' => true
-                ], 200);
-            }catch (\Exception $e) {
-                return response()->json([
-                    'message' => 'Sorry unable to delete bank record',
-                    'success' => false
-                ], 400);
-            }
-        }else {
-            return response()->json([
-                'message' => 'Sorry this data do not exist',
-                'success' => false
+                'success' => false,
             ], 404);
         }
     }

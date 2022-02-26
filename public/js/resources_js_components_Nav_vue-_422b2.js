@@ -139,7 +139,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_css_index_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#logo[data-v-7cd4f788] {\n    width: 100px;\n    height: 90px;\n    margin-left: 3rem;\n    margin-top: -1rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#logo[data-v-7cd4f788] {\r\n    width: 100px;\r\n    height: 90px;\r\n    margin-left: 3rem;\r\n    margin-top: -1rem;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
