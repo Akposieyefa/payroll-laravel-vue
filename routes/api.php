@@ -22,6 +22,8 @@ use App\Http\Controllers\Api\HelperController;
 |
 */
 
+
+
 Route::group(['middleware' => 'api', 'prefix' => 'v1'], function ($router) {
 
     Route::post('/login', [AuthController::class, 'login']);
