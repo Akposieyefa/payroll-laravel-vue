@@ -160,6 +160,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -179,6 +192,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         code: ""
       },
       banks: [],
+      pagination: {},
       edit: false
     };
   },
@@ -309,33 +323,44 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee3, null, [[0, 10]]);
       }))();
     },
-    getAllBnk: function getAllBnk() {
+    getAllBnk: function getAllBnk(page_url) {
       var _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-        var response;
+        var vm, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                _context4.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("banks", {
+                vm = _this4;
+                page_url = page_url || 'banks';
+                _context4.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(page_url, {
                   headers: {
                     Authorization: "Bearer ".concat(localStorage.getItem("token"))
                   }
                 });
 
-              case 2:
+              case 4:
                 response = _context4.sent;
                 _this4.banks = response.data.data;
+                vm.makePagination(response.data.meta, response.data.links);
 
-              case 4:
+              case 7:
               case "end":
                 return _context4.stop();
             }
           }
         }, _callee4);
       }))();
+    },
+    makePagination: function makePagination(meta, links) {
+      this.pagination = {
+        current_page: meta.current_page,
+        last_page: meta.last_page,
+        next_page_url: links.next,
+        prev_page_url: links.prev
+      };
     },
     deleteBnk: function deleteBnk(id) {
       var _this5 = this;
@@ -604,6 +629,78 @@ var render = function () {
                       ),
                     ]
                   ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-footer border-0 py-5" }, [
+                  _c("nav", { attrs: { "aria-label": "..." } }, [
+                    _c("ul", { staticClass: "pagination" }, [
+                      _c(
+                        "li",
+                        {
+                          staticClass: "page-item",
+                          class: [{ disabled: !_vm.pagination.prev_page_url }],
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "#", tabindex: "-1" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.getAllBnk(
+                                    _vm.pagination.prev_page_url
+                                  )
+                                },
+                              },
+                            },
+                            [_vm._v("Previous")]
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "page-item disabled" }, [
+                        _c(
+                          "a",
+                          { staticClass: "page-link", attrs: { href: "#" } },
+                          [
+                            _vm._v(
+                              "Page " +
+                                _vm._s(_vm.pagination.current_page) +
+                                " of " +
+                                _vm._s(_vm.pagination.last_page) +
+                                " "
+                            ),
+                          ]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        {
+                          staticClass: "page-item",
+                          class: [{ disabled: !_vm.pagination.next_page_url }],
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              attrs: { href: "#" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.getAllBnk(
+                                    _vm.pagination.next_page_url
+                                  )
+                                },
+                              },
+                            },
+                            [_vm._v("Next")]
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]),
                 ]),
               ]),
             ]),

@@ -14,7 +14,7 @@ class BankAction
     /**
      * @var Bank
      */
-    Bankprivate $model;
+    private  Bank $model;
 
     /**
      * @param Bank $model
@@ -88,7 +88,7 @@ class BankAction
      */
     public function getAllBnkAction(): JsonResponse | AnonymousResourceCollection
     {
-        $banks = $this->model->with(['staffs'])->latest()->paginate(20);
+        $banks = $this->model->with(['staffs'])->latest()->paginate(10);
 
         if (count($banks) < 1) {
             return response()->json([

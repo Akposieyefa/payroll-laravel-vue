@@ -67,7 +67,17 @@
                                 </table>
                             </div>
                             <div class="card-footer border-0 py-5">
-                                <span class="text-muted text-sm">Showing 10 items out of 250 results found</span>
+                                <nav aria-label="...">
+                                    <ul class="pagination">
+                                        <li v-bind:class="[{disabled: !pagination.prev_page_url}]" class="page-item">
+                                            <a class="page-link"  @click="getAllBnk(pagination.prev_page_url)" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item disabled"><a class="page-link" href="#">Page {{ pagination.current_page}} of {{ pagination.last_page}} </a></li>
+                                        <li v-bind:class="[{disabled: !pagination.next_page_url}]" class="page-item">
+                                            <a class="page-link" @click="getAllBnk(pagination.next_page_url)" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -97,11 +107,22 @@ export default {
         }
     },
     methods : {
-        async getAllStaffs() {
-            const response = await axios.get("staffs", {
+        async getAllStaffs(page_url) {
+            let vm = this;
+            page_url = page_url || 'staffs'
+            const response = await axios.get(page_url, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             });
             this.staffs = response.data.data;
+            vm.makePagination(response.data.meta, response.data.links)
+        },
+        makePagination(meta, links) {
+            this.pagination = {
+                current_page: meta.current_page,
+                last_page: meta.last_page,
+                next_page_url: links.next,
+                prev_page_url: links.prev
+            };
         },
         formatDate(dateString) {
             const options = { year: "numeric", month: "long", day: "numeric" };
