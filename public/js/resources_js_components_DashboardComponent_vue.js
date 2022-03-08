@@ -266,7 +266,7 @@ var render = function () {
                   staticClass:
                     "h6 font-semibold text-muted text-sm d-block mb-2",
                 },
-                [_vm._v("Staffs")]
+                [_vm._v("Staff's")]
               ),
               _vm._v(" "),
               _c("span", { staticClass: "h3 font-bold mb-0" }, [

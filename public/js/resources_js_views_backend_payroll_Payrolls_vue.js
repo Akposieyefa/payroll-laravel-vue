@@ -111,7 +111,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Payrolls",
   components: {
@@ -282,6 +281,8 @@ var render = function () {
                           return _c("tr", { key: staff.id }, [
                             _c("td", [_vm._v(" " + _vm._s(index + 1) + " ")]),
                             _vm._v(" "),
+                            _c("td", [_vm._v(" " + _vm._s(staff.staff_id))]),
+                            _vm._v(" "),
                             _c("td", [
                               _c("img", {
                                 staticClass:
@@ -300,15 +301,13 @@ var render = function () {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                            " +
+                                    "\n                                                " +
                                       _vm._s(staff.full_name) +
-                                      "\n                                        "
+                                      "\n                                            "
                                   ),
                                 ]
                               ),
                             ]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(" " + _vm._s(staff.staff_id))]),
                             _vm._v(" "),
                             _c("td", [_vm._v(" " + _vm._s(staff.email))]),
                             _vm._v(" "),
@@ -343,7 +342,7 @@ var render = function () {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                            View\n                                        "
+                                      "\n                                                View\n                                            "
                                     ),
                                   ]
                                 ),
@@ -371,8 +370,6 @@ var render = function () {
                     ]
                   ),
                 ]),
-                _vm._v(" "),
-                _vm._m(4),
               ]),
             ]),
           ]),
@@ -396,7 +393,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("All Staffs")]),
+      _c("h5", { staticClass: "mb-0" }, [_vm._v("Payroll List")]),
     ])
   },
   function () {
@@ -407,15 +404,13 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("No..")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
-        _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Staff ID")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Email")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Phone")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Salary")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Appointment Date")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Payment Date")]),
         _vm._v(" "),
         _c("th"),
       ]),
@@ -433,16 +428,6 @@ var staticRenderFns = [
       },
       [_c("i", { staticClass: "bi bi-trash" })]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer border-0 py-5" }, [
-      _c("span", { staticClass: "text-muted text-sm" }, [
-        _vm._v("Showing 10 items out of 250 results found"),
-      ]),
-    ])
   },
 ]
 render._withStripped = true

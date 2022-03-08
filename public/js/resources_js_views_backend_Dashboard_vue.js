@@ -137,7 +137,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      staffs: []
+      staffs: [],
+      pagination: {}
     };
   },
   methods: {
@@ -942,7 +943,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("Most Recent Staffs")]),
+      _c("h5", { staticClass: "mb-0" }, [_vm._v("Most Recent Staff List ")]),
     ])
   },
   function () {

@@ -13,7 +13,7 @@
                             <div class="row align-items-center">
                                 <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                                     <!-- Title -->
-                                    <h1 class="h2 mb-0 ls-tight">Departments</h1>
+                                    <h1 class="h2 mb-0 ls-tight">Department List</h1>
                                 </div>
                                 <!-- Actions -->
                                 <div class="col-sm-6 col-12 text-sm-end">
@@ -38,7 +38,7 @@
                         <!-- Card stats -->
                         <div class="card shadow border-0 mb-7">
                             <div class="card-header">
-                                <h5 class="mb-0">All Departments</h5>
+                                <h5 class="mb-0">All Department</h5>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover table-nowrap">
@@ -46,7 +46,7 @@
                                     <tr>
                                         <th scope="col">No..</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Staffs</th>
+                                        <th scope="col">Staff</th>
                                         <th scope="col">Date</th>
                                         <th></th>
                                     </tr>

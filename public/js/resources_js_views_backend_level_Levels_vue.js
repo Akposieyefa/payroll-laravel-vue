@@ -1260,7 +1260,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "row align-items-center" }, [
               _c("div", { staticClass: "col-sm-6 col-12 mb-4 mb-sm-0" }, [
                 _c("h1", { staticClass: "h2 mb-0 ls-tight" }, [
-                  _vm._v("Levels"),
+                  _vm._v("Level List"),
                 ]),
               ]),
               _vm._v(" "),
@@ -1293,7 +1293,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("All Levels")]),
+      _c("h5", { staticClass: "mb-0" }, [_vm._v("All Level")]),
     ])
   },
   function () {

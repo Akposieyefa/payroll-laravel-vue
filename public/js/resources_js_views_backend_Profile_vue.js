@@ -761,7 +761,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-6 col-12 mb-4 mb-sm-0" }, [
-      _c("h1", { staticClass: "h2 mb-0 ls-tight" }, [_vm._v("Onboard Staff")]),
+      _c("h1", { staticClass: "h2 mb-0 ls-tight" }, [_vm._v("Profile")]),
     ])
   },
   function () {

@@ -1313,7 +1313,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "row align-items-center" }, [
               _c("div", { staticClass: "col-sm-6 col-12 mb-4 mb-sm-0" }, [
                 _c("h1", { staticClass: "h2 mb-0 ls-tight" }, [
-                  _vm._v("Departments"),
+                  _vm._v("Department List"),
                 ]),
               ]),
               _vm._v(" "),
@@ -1346,7 +1346,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", { staticClass: "mb-0" }, [_vm._v("All Departments")]),
+      _c("h5", { staticClass: "mb-0" }, [_vm._v("All Department")]),
     ])
   },
   function () {
@@ -1359,7 +1359,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Staffs")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Staff")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Date")]),
         _vm._v(" "),

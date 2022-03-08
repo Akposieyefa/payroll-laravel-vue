@@ -19,7 +19,7 @@
                         <!-- End of card state -->
                         <div class="card shadow border-0 mb-7">
                             <div class="card-header">
-                                <h5 class="mb-0">Most Recent Staffs</h5>
+                                <h5 class="mb-0">Most Recent Staff List </h5>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover table-nowrap">
@@ -103,7 +103,8 @@ export default {
     },
     data() {
         return {
-            staffs: []
+            staffs: [],
+            pagination: {}
         }
     },
     methods : {

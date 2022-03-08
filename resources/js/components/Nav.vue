@@ -41,7 +41,7 @@
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/departments">
-                            <i class="bi bi-bar-chart"></i> Departments
+                            <i class="bi bi-bar-chart"></i> Department
                         </router-link>
                     </li>
                     <li class="nav-item">
@@ -51,17 +51,17 @@
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/levels">
-                            <i class="bi bi-chat"></i> Levels
+                            <i class="bi bi-chat"></i> Level
                         </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/steps">
-                            <i class="bi bi-bookmarks"></i> Steps
+                            <i class="bi bi-bookmarks"></i> Step
                         </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/staffs">
-                            <i class="bi bi-people"></i>  Staffs
+                            <i class="bi bi-people"></i>  Staff
                         </router-link>
                     </li>
                     <li class="nav-item">

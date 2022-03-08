@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Staffs</span>
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Staff's</span>
                             <span class="h3 font-bold mb-0">{{ staffs }}</span>
                         </div>
                         <div class="col-auto">

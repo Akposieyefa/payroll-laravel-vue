@@ -718,7 +718,7 @@ var render = function () {
                       },
                       [
                         _c("i", { staticClass: "bi bi-bar-chart" }),
-                        _vm._v(" Departments\n                    "),
+                        _vm._v(" Department\n                    "),
                       ]
                     ),
                   ],
@@ -750,7 +750,7 @@ var render = function () {
                       { staticClass: "nav-link", attrs: { to: "/levels" } },
                       [
                         _c("i", { staticClass: "bi bi-chat" }),
-                        _vm._v(" Levels\n                    "),
+                        _vm._v(" Level\n                    "),
                       ]
                     ),
                   ],
@@ -766,7 +766,7 @@ var render = function () {
                       { staticClass: "nav-link", attrs: { to: "/steps" } },
                       [
                         _c("i", { staticClass: "bi bi-bookmarks" }),
-                        _vm._v(" Steps\n                    "),
+                        _vm._v(" Step\n                    "),
                       ]
                     ),
                   ],
@@ -782,7 +782,7 @@ var render = function () {
                       { staticClass: "nav-link", attrs: { to: "/staffs" } },
                       [
                         _c("i", { staticClass: "bi bi-people" }),
-                        _vm._v("  Staffs\n                    "),
+                        _vm._v("  Staff\n                    "),
                       ]
                     ),
                   ],

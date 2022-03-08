@@ -13,7 +13,7 @@
                             <div class="row align-items-center">
                                 <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                                     <!-- Title -->
-                                    <h1 class="h2 mb-0 ls-tight">Banks</h1>
+                                    <h1 class="h2 mb-0 ls-tight">Bank List</h1>
                                 </div>
                                 <!-- Actions -->
                                 <div class="col-sm-6 col-12 text-sm-end">
@@ -38,7 +38,7 @@
                         <!-- Card stats -->
                         <div class="card shadow border-0 mb-7">
                             <div class="card-header">
-                                <h5 class="mb-0">All Banks</h5>
+                                <h5 class="mb-0">All Bank</h5>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover table-nowrap">
